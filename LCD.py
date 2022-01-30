@@ -1,12 +1,12 @@
-import utime
 from machine import I2C
 from lcd_api import LcdApi
 from pico_i2c_lcd import I2cLcd
 # https://github.com/T-622/RPI-PICO-I2C-LCD
+from utime import sleep
 
 
 # Settings
-I2C_ADDR     = 0x27
+I2C_ADDR = 0x27
 I2C_NUM_ROWS = 4
 I2C_NUM_COLS = 20
 
@@ -22,6 +22,6 @@ lcd.move_to(7,1)
 lcd.putstr('& Second')
 lcd.show_cursor()
 lcd.blink_cursor_on()  # cursor blinking
-utime.sleep(3)
+sleep(3)
 lcd.display_off()  # text display
 lcd.backlight_off()  # screen light
