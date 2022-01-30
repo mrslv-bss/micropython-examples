@@ -1,5 +1,6 @@
 from machine import Pin
-import utime
+from utime import sleep
+
 
 pin_a = Pin(0, Pin.OUT)
 pin_b = Pin(1, Pin.OUT)
@@ -15,7 +16,7 @@ def rotater(step, delay):
     pin_b.value(step[1])
     pin_c.value(step[2])
     pin_d.value(step[3])
-    utime.sleep(delay)
+    sleep(delay)
 
 
 while True:
